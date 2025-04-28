@@ -21,11 +21,11 @@ const form = {
 } 
 
 function login() {
-    window.location.href = "home.html"
+    window.location.href = "Paginas/Home/home.html"
 }
 
 function register() {
-    window.location.href = "registro.html"
+    window.location.href = "Paginas/Registro/registro.html"
 }
 
 function isEmailValid() {
