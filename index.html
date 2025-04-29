@@ -3,12 +3,17 @@
 
 <head>
     <title>Login - Controle Financeiro</title>
+
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="global.css">
+
     <script src="script.js"></script>
     <script src="validations.js"></script>
+    <script src="loading.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-auth-compat.js"></script>
+
     <script>
         const firebaseConfig = {
             apiKey: "AIzaSyDVHRUY3NfKHDLP4jK-3STAEj0qiLNwS0k",
@@ -19,12 +24,13 @@
             appId: "1:568892239367:web:1912f4c27ad5ad0aea44a2"
         };
         firebase.initializeApp(firebaseConfig);
-
-
     </script>
 </head>
 
-<body>
+<body class="centralize">
+    <div class="loading centralize"> 
+        
+    </div>
     <form>
         <div class="form-field">
             <div><label>Email</label></div>
