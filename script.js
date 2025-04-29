@@ -21,7 +21,14 @@ const form = {
 } 
 
 function login() {
-    window.location.href = "Paginas/Home/home.html"
+    firebase.auth().signInWithEmailAndPassword(
+        form.email().value, form.password().value
+    ).then(response => {
+        window.location.href = "Paginas/Home/home.html"
+    }).catch(error => {
+        alert(getErrorMessage(error));
+    });
+
 }
 
 function register() {
