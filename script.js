@@ -21,24 +21,41 @@ const form = {
 } 
 
 function login() {
+    showLoading();
     firebase.auth().signInWithEmailAndPassword(
         form.email().value, form.password().value
     ).then(response => {
+        hideLoading();
         window.location.href = "Paginas/Home/home.html"
     }).catch(error => {
+        hideLoading();
         alert(getErrorMessage(error));
     });
 }
 
-function getErrorMessage(error) {
-    if (error.code == "auth/user-not/found") {
-        return "Usuário nao encontrado";
-    }
-    return error.menssage
-}
-
 function register() {
     window.location.href = "Paginas/Registro/registro.html"
+}
+
+
+function getErrorMessage(error) {
+    if (error.code == "auth/user-not-found") {
+        return "Usuário não encontrado";
+    }
+    if (error.code == "auth/invalid-credential") {
+        return "Senha inválida";
+    }
+}
+
+function recoverPassword() {
+    showLoading();
+    firebase.auth().sendPasswordResetEmail(form.email().value).then(() => {
+        hideLoading();
+        alert('Email enviado com sucesso');
+    }).catch(error => {
+        hideLoading();
+        alert(getErrorMessage(error));
+    });
 }
 
 function isEmailValid() {
