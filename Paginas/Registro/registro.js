@@ -2,7 +2,7 @@ firebase.auth().onAuthStateChanged(user => {
     if (user) {
         window.location.href = "../Home/home.html"
     }
-})
+})/
 
 
 function onChangeEmail() {
