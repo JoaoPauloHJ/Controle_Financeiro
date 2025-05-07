@@ -9,7 +9,6 @@ function showLoading() {
 
     document.body.appendChild(div);
 
-
 }
 
 function hideLoading() {

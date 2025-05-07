@@ -3,11 +3,73 @@
 
 <head>
     <title>Registrar - Controle Financeiro</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="../../css/principal.css">
+
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-auth-compat.js"></script>
+
+    <script src="../../firebase-ini.js"></script>
+    <script src="registro.js"></script>
+    <script src="../../validations.js"></script>
+    <script src="../../loading.js"></script>
 
 </head>
 
-<body>
-    Registrar
+<body class="centralize">
+    <form>
+        <header>
+            <div class="container header-content">
+                <div class="logo">AutoSeguro</div>
+            </div>
+        </header>
+        <br><br>
+        <div class="form-field">
+            <div>
+                <label>Email</label>
+            </div>
+            <input type="email" placeholder="seu@email.com" onchange="onChangeEmail()" id="email" />
+            <div class="error" id="Erro-Email-Invalido">
+                Email é obrigatório
+            </div>
+            <div class="error" id="Erro-Email-Obrigatorio">
+                Email é inválido
+            </div>
+        </div>
+
+        <div class="form-field">
+            <div>
+                <label>Senha</label>
+            </div>
+            <input type="password" placeholder="Senha" id="senha" onchange="onChangePassword()"/>
+            <div class="error" id="erro-senha-necessario">
+                Senha é obrigatório
+            </div>
+            <div class="error" id="erro-min-senha">
+                Senha deve ter pelo menos 6 caracteres
+            </div>
+        </div>
+
+        <div class="form-field">
+            <div>
+                <label>Confirmar Senha</label>
+            </div>
+            <input type="password" placeholder="Confirmar senha" id="ConfirmarSenha" onchange="onChangeConfirmPassword()"/>
+
+            <div class="error" id="erro-senha-nao-corresponde">
+                Senhas e Confirmar senha devem ser iguais
+            </div>
+        </div>
+
+        <div>
+            <button type="button" class="solid" disabled id="botao-registrar" 
+            onclick="register()">Registrar</button>
+        </div>
+        <div>
+            <button type="button" class="clear">Login</button>
+        </div>
+    </form>
 </body>
 
 </html>
