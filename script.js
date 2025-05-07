@@ -1,10 +1,10 @@
 //Todas as funções do site
 
-// firebase.auth().onAuthStateChanged(user => {
-//     if (user) {
-//         window.location.href = "Paginas/Home/home.html"
-//     }
-// })
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        window.location.href = "Paginas/Home/home.html"
+    }
+})
 
 
 function onChangeEmail() {
@@ -34,7 +34,7 @@ function login() {
         form.email().value, form.password().value
     ).then(response => {
         hideLoading();
-        window.location.href = "principal.html"
+        window.location.href = "Paginas/Home/home.html"
     }).catch(error => {
         hideLoading();
         alert(getErrorMessage(error));
@@ -42,7 +42,7 @@ function login() {
 }
 
 function register() {
-    window.location.href = "Paginas/Registro/registroFinan.html"
+    window.location.href = "Paginas/Registro/registro.html"
 }
 
 
