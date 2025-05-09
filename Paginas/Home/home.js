@@ -5,3 +5,4 @@ function logout() {
         alert('Erro ao fazer logoff')
     })
 }
+
